@@ -1,0 +1,18 @@
+doctype html 
+html 
+  head
+    meta(charset='utf-8') 
+  body 
+    h1 
+      a(href='/topic') Server Side Javascript 
+    ul 
+      each topic in topics 
+        li
+          a(href='/topic/'+topic.id)= topic.title
+      
+    article 
+      form(action='/topic/'+topic.id+'/delete' method='post')
+        p
+          input(type='text' name='delete' placeholder='Really want to delete it? (Y/N)')
+        p
+          input(type='submit') 
